@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imgs/67675.png">
+
+    <title>HIBA TIPE 2024 </title>
+</head>
+<body>
+    <nav>
+        <h1>Hiba @ TIPE 2024</h1>
+    </nav>
+    <img src="imgs/2110.i201.032.F.m004.c9.ski snowboarding winter sports isometric set.jpg" width="750px" height="100%"  alt="">
+
+    <form action="login.php" method="POST">
+        <div id="message"></div>
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <button>connecter vous</button>
+        <a href="register.html" style="text-align: center; display: block;">vous n'êtes pas inscris?</a>
+    </form>
+    <script>
+        // Display success or error message if redirected with status
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('status') === 'success') {
+            document.getElementById('message').innerHTML = '<p>Connexion réussie!</p>';
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').style.marginBottom = '20px';
+        } else if (urlParams.get('status') === 'error') {
+            document.getElementById('message').innerHTML = '<p>Nom d\'utilisateur ou mot de passe incorrect!</p>';
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').style.marginBottom = '20px';
+        }
+    </script>
+</body>
+</html>

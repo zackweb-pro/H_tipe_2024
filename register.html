@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imgs/67675.png">
+    <title>HIBA TIPE 2024</title>
+
+</head>
+<body>
+    <nav>
+        <h1>Hiba @ TIPE 2024</h1>
+    </nav>
+    <img src="imgs/2110.i201.032.F.m004.c9.ski snowboarding winter sports isometric set.jpg" width="750px" height="100%"  alt="">
+
+    <form action="register.php" method="POST">
+        <div id="message"></div>
+        <input type="text" name="prenom" placeholder="votre prénom">
+        <input type="text" name="nom" placeholder="votre nom">
+        <input type="email" name="email" placeholder="votre email">
+        <input type="text" name="usr" placeholder="choisir un nom d'utilisateur">
+        <input type="password" name="pwd" placeholder="votre mot de passe">
+        <input type="password" name="pwd_confirm" placeholder="confirmer votre mot de passe">
+        <select name="poste" id="">
+            <option value="s">vous êtes skieur?</option>
+            <option value="c">vous êtes chef de station?</option>
+        </select>
+        <button>enregistrer</button>
+        <a href="login.html" style="text-align: center; display: block;">vous avez déjà un compte?</a>
+    </form>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            // e.preventDefault();
+            var pwd = document.querySelector('input[name="pwd"]').value;
+            var pwdConfirm = document.querySelector('input[name="pwd_confirm"]').value;
+            
+            if (pwd != pwdConfirm) {
+                e.preventDefault();
+                alert("Les mots de passe ne correspondent pas !");
+            }
+        });
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('status') === 'success') {
+            document.getElementById('message').innerHTML = '<p>Registration successful! You can now log in.</p>';
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').style.marginBottom = '20px';
+        }
+        </script>
+        
+</body>
+</html>
